@@ -1,22 +1,29 @@
 import * as C from "./styles"
 import { Item } from "../../types/item"
-import { useState } from "react"
+import { Delete, Edit } from "@mui/icons-material"
 
 type Props = {
-    item: Item
+    item: Item,
+    onChange: (id: number, done: boolean) => void
 }
 
-const ListItem = ({ item }: Props) => {
-    const [isChecked, setIsChecked] = useState(item.done)
+const ListItem = ({ item, onChange }: Props) => {
 
     return (
-        <C.Container done={isChecked}>
+        <C.Container done={item.done}>
             <input
                 type="checkbox"
-                checked={isChecked}
-                onChange={e => setIsChecked(e.target.checked)}
+                checked={item.done}
+                onChange={e => onChange(item.id, e.target.checked)}
             />
             <label>{item.name} {item.done.toString()}</label>
+            <C.rightContainer>
+                {
+                    !item.done &&
+                    <Edit className="icon edit" />
+                }
+                <Delete className="icon delete" />
+            </C.rightContainer>
         </C.Container>
     )
 }

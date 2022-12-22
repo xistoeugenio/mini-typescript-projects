@@ -21,7 +21,32 @@ export const Container = styled.div(({ done }: containerProps) => (
 
     label{
         color: #CCC;
-        text-decoration: ${done ? 'line-through' : 'initial'}
+        text-decoration: ${done ? 'line-through' : 'initial'};
+        flex: 1;
     }
 `
 ))
+
+export const rightContainer = styled.div`
+    display: flex;
+    gap: 20px;
+
+    .icon{
+        font-size: 30px;
+        cursor: pointer;
+
+        &.edit{
+            box-sizing: border-box;
+            color: dodgerblue;
+        }
+
+        &.delete{
+            color: #a91a1a;
+        } 
+
+        &:hover{
+            border-radius: 5px;
+            background: #00000050;
+        }
+    }
+`

@@ -19,12 +19,16 @@ export default function AddArea({ onEnter }: Props) {
     <C.Container>
       <div className="image">+</div>
       <input
+        maxLength={50}
         type="text"
         placeholder="Add a task"
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
         onKeyUp={handleKeyUp}
       />
+      <div className="wordLimit">
+        {inputText.length + "/50"}
+      </div>
     </C.Container>
   )
 }
