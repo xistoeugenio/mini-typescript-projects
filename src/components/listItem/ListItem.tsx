@@ -7,13 +7,14 @@ type Props = {
     item: Item,
     onChange: (id: number, done: boolean) => void,
     editTask: (id: number, name: string) => void,
+    deleteTask: (taskName: string) => void,
 }
 
-const ListItem = ({ item, onChange, editTask }: Props) => {
+const ListItem = ({ item, onChange, editTask, deleteTask }: Props) => {
     const [openEdit, setOpenEdit] = useState(false)
     const [taskName, setTaskName] = useState(item.name)
 
-    const handleTaskName =()=>{
+    const handleTaskName = () => {
         setOpenEdit(false)
         editTask(item.id, taskName)
     }
@@ -22,12 +23,16 @@ const ListItem = ({ item, onChange, editTask }: Props) => {
         <C.Container done={item.done}>
             {openEdit ?
                 <>
-                    <input 
-                    value={taskName} 
-                    className="editInput"
-                    onChange={e=>setTaskName(e.target.value)}
-                    />
-                    <Check className="checkIcon" onClick={handleTaskName}/>
+                    <div className="editContainer">
+                        <input
+                            maxLength={50}
+                            value={taskName}
+                            className="editInput"
+                            onChange={e => setTaskName(e.target.value)}
+                        />
+                        <span>{taskName.length + `/50`}</span>
+                    </div>
+                    <Check className="checkIcon" onClick={handleTaskName} />
                 </>
                 :
                 <>
@@ -43,7 +48,7 @@ const ListItem = ({ item, onChange, editTask }: Props) => {
                             !item.done &&
                             <Edit className="icon edit" onClick={() => { setOpenEdit(true) }} />
                         }
-                        <Delete className="icon delete" />
+                        <Delete className="icon delete" onClick={() => { deleteTask(item.name) }} />
                     </C.rightContainer>
                 </>
             }

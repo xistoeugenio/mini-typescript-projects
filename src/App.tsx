@@ -20,21 +20,26 @@ const App = () => {
     setList(newList)
   }
 
+  const handleDeleteTask = (taskName: string) => {
+    const newList = list.filter(data => data.name !== taskName);
+    setList(newList)
+  }
+
 
   const handleTaskChange = (id: number, done: boolean) => {
     let newList = [...list];
-    for(let i in newList) {
-      if(newList[i].id === id) {
+    for (let i in newList) {
+      if (newList[i].id === id) {
         newList[i].done = done;
       }
     }
     setList(newList);
   }
 
-  const  editTask= (id: number, name: string) => {
+  const editTask = (id: number, name: string) => {
     let newList = [...list];
-    for(let i in newList) {
-      if(newList[i].id === id) {
+    for (let i in newList) {
+      if (newList[i].id === id) {
         newList[i].name = name;
       }
     }
@@ -47,7 +52,13 @@ const App = () => {
         <C.Header>To do list</C.Header>
         <AddArea onEnter={handleAddTask} />
         {list.map((item, index) => (
-          <ListItem key={index} item={item} onChange={handleTaskChange} editTask={editTask}/>
+          <ListItem
+            key={index}
+            item={item}
+            onChange={handleTaskChange}
+            editTask={editTask} 
+            deleteTask ={handleDeleteTask}
+            />
         ))}
       </C.Area>
     </C.Container>

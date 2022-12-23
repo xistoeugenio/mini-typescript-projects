@@ -13,19 +13,30 @@ export const Container = styled.div(({ done }: containerProps) => (
     margin-bottom: 10px;
     align-items: center;
 
-    .editInput{
-        box-sizing: border-box;
+    .editContainer{
+        flex: 1;
         background: #00000050;
+        box-sizing: border-box;
         height: 30px;
         margin: 0 5px;
-        padding: 0 5px;
+        padding: 0 8px;
         border-radius: 5px;
-        border: 0px;
-        color: white;
-        font-size: 16px;
-        outline: none;
-        flex: 1;
+        display: flex;
+        align-items: center;
+
+        .editInput{
+            box-sizing: border-box;
+            background: transparent;
+            padding: 0 5px;
+            border: 0px;
+            font-size: 16px;
+            color: white;
+            outline: none;
+            flex: 1;
+        }
     }
+
+    
 
     .radio{
         width: 25px;
