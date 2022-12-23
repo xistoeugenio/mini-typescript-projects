@@ -31,13 +31,23 @@ const App = () => {
     setList(newList);
   }
 
+  const  editTask= (id: number, name: string) => {
+    let newList = [...list];
+    for(let i in newList) {
+      if(newList[i].id === id) {
+        newList[i].name = name;
+      }
+    }
+    setList(newList);
+  }
+
   return (
     <C.Container>
       <C.Area>
         <C.Header>To do list</C.Header>
         <AddArea onEnter={handleAddTask} />
         {list.map((item, index) => (
-          <ListItem key={index} item={item} onChange={handleTaskChange}/>
+          <ListItem key={index} item={item} onChange={handleTaskChange} editTask={editTask}/>
         ))}
       </C.Area>
     </C.Container>

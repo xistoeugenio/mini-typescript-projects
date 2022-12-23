@@ -13,7 +13,21 @@ export const Container = styled.div(({ done }: containerProps) => (
     margin-bottom: 10px;
     align-items: center;
 
-    input{
+    .editInput{
+        box-sizing: border-box;
+        background: #00000050;
+        height: 30px;
+        margin: 0 5px;
+        padding: 0 5px;
+        border-radius: 5px;
+        border: 0px;
+        color: white;
+        font-size: 16px;
+        outline: none;
+        flex: 1;
+    }
+
+    .radio{
         width: 25px;
         height: 25px;
         margin-right: 5px;
@@ -23,6 +37,14 @@ export const Container = styled.div(({ done }: containerProps) => (
         color: #CCC;
         text-decoration: ${done ? 'line-through' : 'initial'};
         flex: 1;
+    }
+
+    .checkIcon{
+        background: dodgerblue;
+        color: white;
+        font-size: 30px;
+        border-radius: 5px;
+        cursor: pointer;
     }
 `
 ))
