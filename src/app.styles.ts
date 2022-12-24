@@ -9,6 +9,11 @@ export const Area = styled.div`
 margin: auto;
 max-width: 980px;
 padding: 10px;
+
+.errorTask{
+    color: red;
+    margin: 20px 0;
+}
 `
 export const Header = styled.h1`
 margin: 0;
