@@ -45,6 +45,7 @@ export const Container = styled.div(({ done }: containerProps) => (
     }
 
     label{
+        overflow-x: hidden;
         color: #CCC;
         text-decoration: ${done ? 'line-through' : 'initial'};
         flex: 1;
@@ -62,7 +63,8 @@ export const Container = styled.div(({ done }: containerProps) => (
 
 export const rightContainer = styled.div`
     display: flex;
-    gap: 20px;
+    gap: 12px;
+    margin-left: 5px;
 
     .icon{
         font-size: 30px;

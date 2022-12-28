@@ -8,8 +8,12 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
 
-    .image{
+    .iconPlus{
+        color: white;
+        background: #0000003a;
         margin-right: 5px;
+        border-radius: 5px;
+        cursor: pointer;
     }
 
     input{

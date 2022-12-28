@@ -7,7 +7,7 @@ type Props = {
     item: Item,
     onChange: (id: number, done: boolean) => void,
     editTask: (id: number, name: string) => void,
-    deleteTask: (taskName: string) => void,
+    deleteTask: (id: number) => void,
 }
 
 const ListItem = ({ item, onChange, editTask, deleteTask }: Props) => {
@@ -48,7 +48,7 @@ const ListItem = ({ item, onChange, editTask, deleteTask }: Props) => {
                             !item.done &&
                             <Edit className="icon edit" onClick={() => { setOpenEdit(true) }} />
                         }
-                        <Delete className="icon delete" onClick={() => { deleteTask(item.name) }} />
+                        <Delete className="icon delete" onClick={() => { deleteTask(item.id) }} />
                     </C.rightContainer>
                 </>
             }

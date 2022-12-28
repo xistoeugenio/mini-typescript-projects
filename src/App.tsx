@@ -6,7 +6,7 @@ import AddArea from "./components/addArea/AddArea";
 
 const App = () => {
   const [list, setList] = useState<Item[]>(JSON.parse(localStorage.getItem("tasks") as string) || [])
-  const [errorTask, setErrorTask] = useState(true)
+
 
   const handleAddTask = (taskName: string) => {
     let newList = [...list]
@@ -19,8 +19,8 @@ const App = () => {
     setList(newList)
   }
 
-  const handleDeleteTask = (taskName: string) => {
-    const newList = list.filter(data => data.name !== taskName);
+  const handleDeleteTask = (id: number) => {
+    const newList = list.filter(data => data.id !== id);
     localStorage.setItem("tasks", JSON.stringify(newList))
     setList(newList)
   }
@@ -53,7 +53,6 @@ const App = () => {
       <C.Area>
         <C.Header>To do list</C.Header>
         <AddArea onEnter={handleAddTask} />
-        {errorTask && <p className="errorTask">This task already exists!</p>}
         {list.map((item, index) => (
           <ListItem
             key={index}

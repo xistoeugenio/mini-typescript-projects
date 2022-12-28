@@ -1,4 +1,5 @@
 import { KeyboardEvent, useState } from "react"
+import { Add } from "@mui/icons-material"
 import * as C from "./styles"
 
 type Props = {
@@ -15,9 +16,17 @@ export default function AddArea({ onEnter }: Props) {
     }
   }
 
+  const addNewTask = () => {
+    if (inputText.length <= 50) {
+      onEnter(inputText)
+      setInputText('')
+    }
+
+  }
+
   return (
     <C.Container>
-      <div className="image">+</div>
+      <Add className="iconPlus" onClick={() => { addNewTask() }} />
       <input
         maxLength={50}
         type="text"
