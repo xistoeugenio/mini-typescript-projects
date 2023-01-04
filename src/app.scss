@@ -1,0 +1,48 @@
+.App {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    background-color: #17181F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+
+    .appHeader {
+        width: 98%;
+        max-width: 980px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        color: #FFF;
+
+        span {
+            color: #797A81;
+        }
+
+        h1 {
+            width: 100%;
+            padding-bottom: 10px;
+            margin: 0;
+            text-align: center;
+            border-bottom: 1px solid #444;
+        }
+    }
+
+    .appMain {
+        background-color: goldenrod;
+        width: 98%;
+        max-width: 980px;
+        margin: 20px 0;
+        flex: 1;
+    }
+
+
+    .appFooter {
+        background-color: dodgerblue;
+        width: 98%;
+        max-width: 980px;
+        height: 60px;
+    }
+}
