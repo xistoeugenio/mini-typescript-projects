@@ -34,7 +34,6 @@
         width: 94%;
         max-width: 980px;
         margin: 20px 0;
-        border-radius: 5px;
         flex: 1;
         overflow-y: scroll;
 
@@ -66,11 +65,12 @@
                 align-items: center;
                 justify-content: space-evenly;
                 flex-wrap: wrap;
-
+                
                 .eachProject {
                     box-sizing: border-box;
                     width: 250px;
                     height: 300px;
+                    text-decoration: none;
                     padding: 12px;
                     border-radius: 5px;
                     display: flex;
@@ -121,9 +121,44 @@
 
 
     .appFooter {
-        background-color: dodgerblue;
+        box-sizing: border-box;
+        background-color: rgb(22, 19, 19);
         width: 94%;
         max-width: 980px;
         height: 20%;
+        border-radius: 10px;
+        padding-left: 15px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        h3 {
+            color: rgb(230, 213, 213);
+        }
+
+        .othersContainer {
+            height: 80%;
+            display: flex;
+            gap: 30px;
+
+            a {
+                background-color: aqua;
+                height: 100%;
+                margin: 2px;
+                border-radius: 5px;
+
+                &:hover {
+                    margin: 0;
+                    border: 2px solid aqua;
+
+                }
+
+                img {
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 5px;
+                }
+            }
+        }
     }
 }
