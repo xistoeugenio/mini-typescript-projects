@@ -9,11 +9,17 @@ function App() {
         <h1>Mini-Projects</h1>
       </header>
       <main className='appMain'>
-        <div className="projectsContainer">
+        <div className="mainContainer">
           <h3>typescript</h3>
-          {typescriptProjects.map(project =>
-            <div>{project.name}</div>
-          )}
+          <div className="projectsContainer">
+            {typescriptProjects.map(project =>
+              <div className='eachProject'>
+                <h4>{project.name}</h4>
+                <div className="imageContainer"><img src={project.image} alt="" /></div>
+                <p>{project.description}</p>
+              </div>
+            )}
+          </div>
         </div>
       </main>
       <footer className='appFooter'>this is footer</footer>

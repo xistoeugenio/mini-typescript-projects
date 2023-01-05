@@ -9,7 +9,7 @@
     padding: 10px 0;
 
     .appHeader {
-        width: 98%;
+        width: 94%;
         max-width: 980px;
         display: flex;
         flex-direction: column;
@@ -31,18 +31,99 @@
     }
 
     .appMain {
-        background-color: goldenrod;
-        width: 98%;
+        width: 94%;
         max-width: 980px;
         margin: 20px 0;
+        border-radius: 5px;
         flex: 1;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .mainContainer {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+
+
+            h3 {
+                color: white;
+                margin: 0;
+            }
+
+            .projectsContainer {
+                width: 100%;
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                flex-wrap: wrap;
+
+                .eachProject {
+                    box-sizing: border-box;
+                    width: 250px;
+                    height: 300px;
+                    padding: 12px;
+                    border-radius: 5px;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    cursor: pointer;
+
+                    background: -moz-linear-gradient(45deg, #000000 0%, #061722 50%, #0A2A3E 100%);
+                    background: -webkit-linear-gradient(45deg, #000000 0%, #061722 50%, #0A2A3E 100%);
+                    background: linear-gradient(45deg, #000000 0%, #061722 50%, #0A2A3E 100%);
+                    -webkit-box-shadow: inset 0px 0px 23px 6px #0a0a0a;
+                    box-shadow: inset 0px 0px 23px 6px #0a0a0a;
+
+                    &:hover {
+                        -webkit-box-shadow: none;
+                        box-shadow: none;
+                    }
+
+                    h4 {
+                        margin: 0px 0px 12px 0px;
+                        color: aqua;
+                    }
+
+                    .imageContainer {
+                        width: 80%;
+                        height: 140px;
+                        border-radius: 5px;
+                        border: 1px solid aqua;
+                        margin: 0;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 5px;
+                            object-fit: cover;
+                        }
+                    }
+
+                    p {
+                        color: aqua;
+                    }
+                }
+            }
+
+
+        }
     }
 
 
     .appFooter {
         background-color: dodgerblue;
-        width: 98%;
+        width: 94%;
         max-width: 980px;
-        height: 60px;
+        height: 20%;
     }
 }
