@@ -2,7 +2,7 @@ export const typescriptProjects = [{
     name: "to do list",
     image: "/assets/todo-picture.png",
     pathPage: "todo",
-    description: "there is nothing here, dont you worry, this is just a test to see whats going on!!! every time, every move"
+    description: "This is a react project created using styled components and typescript."
 },
 {
     name: "another",

@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <header className='appHeader'>
-        <span>this is a project to contain small projects from Xisto Eugenio</span>
+        <span>This is a project that contains the  small projects of Xisto Eugênio</span>
         <h1>Mini-Projects</h1>
       </header>
       <main className='appMain'>

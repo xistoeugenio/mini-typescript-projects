@@ -1,3 +1,5 @@
+@import "./global.scss";
+
 .App {
     box-sizing: border-box;
     width: 100vw;
@@ -19,6 +21,10 @@
 
         span {
             color: #797A81;
+
+            @include tablet {
+                font-size: 12px;
+            }
         }
 
         h1 {
@@ -55,6 +61,8 @@
 
             h3 {
                 color: white;
+                font-size: 27px;
+                font-weight: 400;
                 margin: 0;
             }
 
@@ -65,7 +73,7 @@
                 align-items: center;
                 justify-content: space-evenly;
                 flex-wrap: wrap;
-                
+
                 .eachProject {
                     box-sizing: border-box;
                     width: 250px;
@@ -111,6 +119,25 @@
 
                     p {
                         color: aqua;
+                    }
+
+                    @include tablet {
+                        width: 210px;
+                        height: 220px;
+
+                        p {
+                            font-size: 12px;
+                        }
+                    }
+
+                    @include mobile {
+                        width: 250px;
+                        height: 175px;
+
+                        .imageContainer {
+                            width: 45%;
+                            height: 80px;
+                        }
                     }
                 }
             }
@@ -161,4 +188,51 @@
             }
         }
     }
+
+    @include tablet {
+
+        .appMain {
+
+            .mainContainer {
+                padding: 15px 0;
+                
+                .projectsContainer{
+                    gap: 5px;
+                }
+            }
+        }
+
+        .appFooter {
+            height: 18%;
+            margin-bottom: 26px;
+            gap: 12px;
+
+            h3 {
+                font-size: 15px;
+                font-weight: 300;
+            }
+
+            .othersContainer {
+                gap: 5px;
+            }
+        }
+    }
+
+    @include mobile {
+        .appFooter {
+            padding-left: 0;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+
+            h3 {
+                margin: 0;
+            }
+
+            .othersContainer {
+                height: 60%;
+            }
+        }
+    }
+
 }
