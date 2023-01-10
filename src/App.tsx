@@ -1,9 +1,12 @@
+import * as C from './app.styles'
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <C.Container>
+      <C.Area>
+        <C.Header>Photos gallery</C.Header>
+      </C.Area>
+    </C.Container>
   );
 }
 
