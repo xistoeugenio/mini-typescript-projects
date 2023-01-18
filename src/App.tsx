@@ -29,7 +29,7 @@ function App() {
           <a href="https://xisto.xyz" target="_blank" rel="noreferrer">
             <img src="/assets/portfolio-picture.png" alt="" />
           </a>
-          <a href="https://xisto.xyz" target="_blank" rel="noreferrer">
+          <a href="https://socciz.online" target="_blank" rel="noreferrer">
             <img src="/assets/socciz-picture.png" alt="" />
           </a>
         </div>
