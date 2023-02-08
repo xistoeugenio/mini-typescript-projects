@@ -30,16 +30,29 @@ export const UploadForm = styled.form`
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    input[type=submit] {
+    input[type=file] {
+        display: none;
+    }
+
+    button[type=submit] {
         background-color: #756DF4;
+        width: 70px;
+        height: 30px;
         border: 0;
         color: #FFF;
-        padding: 8px 16px;
         font-size: 15px;
         border-radius: 10px;
-        margin: 0 20px;
         cursor: pointer;
+
+        &[disabled]{
+            background-color: #b0acac;
+            color: #434040;
+            cursor: not-allowed;
+        }
 
         &:hover{
             opacity: 0.9;
