@@ -1,6 +1,6 @@
 import { Photo } from "../types/Photos"
 import { storage } from "../libraries/firebase"
-import { ref, listAll, getDownloadURL, uploadBytes } from "firebase/storage"
+import { ref, listAll, getDownloadURL, uploadBytes, deleteObject } from "firebase/storage"
 import { v4 as createId } from 'uuid'
 
 export const getAll = async () => {
@@ -34,4 +34,15 @@ export const insert = async (file: File) => {
     } else {
         return new Error('file type not allowed.')
     }
+}
+
+export const deleteFile = async (file: string)=>{
+    const deleteRef = ref(storage, `images/${file}`)
+
+    try {
+        deleteObject(deleteRef)
+    } catch (error) {
+        console.log(error)
+    }
+
 }

@@ -4,6 +4,7 @@ import * as Photos from './services/photos';
 import { Photo } from './types/Photos'
 import { PhotoItem } from './components/photoItem'
 import Navbar from './components/navbar';
+import './app.css'
 
 function App (){
   const [loading, setLoading] = useState(false)
@@ -17,6 +18,7 @@ function App (){
     }
     getPhotos()
   }, [])
+  console.log(photos)
 
   return (
     <C.Container>
@@ -26,7 +28,7 @@ function App (){
         {loading ? "loading" :
           <C.PhotoList>
             {photos?.map((item, i) => (
-              <PhotoItem key={i} url={item.url} name={item.name} />
+              <PhotoItem key={i} url={item.url} name={item.name} photos={photos} setPhotos={setPhotos}/>
             ))}
           </C.PhotoList>}
       </C.Area>

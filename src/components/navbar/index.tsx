@@ -3,7 +3,7 @@ import * as C from './styles'
 import * as Photos from '../../services/photos';
 import { Photo } from '../../types/Photos'
 import { CircularProgress } from "@mui/material"
-import { Close } from '@mui/icons-material';
+import { Close, FileUpload } from '@mui/icons-material';
 
 type Props = {
     photos: Photo[],
@@ -39,8 +39,11 @@ function Navbar({ photos, setPhotos }: Props) {
     return (
         <C.UploadForm method="POST" onSubmit={handleFormSubmit}>
             {currentFile
-                ? <span>{currentFile}<Close onClick={() => setCurrentFile('')} /></span>
-                : <label htmlFor='image'>Chose your file</label>}
+                ? <span className='fileName'>
+                    {currentFile}
+                    {!uploading && <Close className='closeIcon' onClick={() => setCurrentFile('')} />}
+                </span>
+                : <label htmlFor='image' className='uploadLabel'><FileUpload className='iconUp' />Upload image</label>}
             <input
                 id='image'
                 type="file"
